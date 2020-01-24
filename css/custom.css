@@ -8,16 +8,8 @@ body {
 }
 
 header {
-	position: relative;
 	box-shadow: 0px 2px 2px rgba(0,0,0, 0.18);
 	padding: 0.8em 0;
-}
-
-header .container {
-	margin: 0 auto;
-	width: 970px;
-	display: flex;
-	justify-content: space-between;
 }
 
 header img {
@@ -26,22 +18,62 @@ header img {
 }
 
 .container {
-	max-width: 970px;
+	max-width: 1170px;
 	margin: 0 auto;
+}
+
+.row {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
 
-.container .column {
-	/*border: 1px solid #ccc;*/
-	flex-basis: 20%;
-	box-sizing: border-box;
-	padding: 0 15px;
+.column {
+	flex-basis: 100%;
 }
 
-.container .column:first-of-type {
-	flex-basis: 80%;
+.banner {
+	height: 150px;
+	background: linear-gradient(45deg,rgba(20,78,100,.6),rgba(62,69,169,.4),transparent);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+}
+
+.banner h2 {
+	font-size: 35px;
+	font-weight: 800;
+	text-transform: uppercase;
+	position: relative;
+	text-align: center;
+	text-shadow: 2px 2px 1px rgba(64,64,65,.9);
+}
+
+.banner h2:after {
+	position: absolute;
+	top: 1.5em;
+    left: 43%;
+    width: 4em;
+    height: 5px;
+    margin-bottom: 18px;
+	content: '';
+	background-color: #ffffff;
+	box-shadow: 0px 2px 2px rgba(64,64,65,.9);
+}
+
+.message {
+	background-color: #E4E5E5;
+	display: flex;
+	color:#404041;
+	font-weight: 800;
+	text-align: center;
+}
+
+.message span {
+	color: #3E45A9;
 }
 
 .content h3.title {
@@ -55,12 +87,12 @@ header img {
 
 .content h3.title:after {
 	position: absolute;
-	top: 8px;
-	left: 0;
-	width: 5px;
-	height: 1.5em;
+	top: 100%;
+	left: 2%;
+	width: 4em;
+	height: 3px;
 	content: '';
-	background-color: #174e64;
+	background-color: #E4E5E5;
 }
 
 .content h3.title span {
@@ -84,39 +116,33 @@ header img {
 	height: auto;
 }
 
-/* Large Devices */
-
-@media only screen and (min-width: 900px) {
-	header img {
-		padding: 0;
-	}
+.physicians {
+	padding-top: 2em;
+	border-bottom: 1px solid #eeeeee;
 }
 
-/* Medium Devices */
-@media only screen and (min-width: 768px)  {
-	header .container {
-		width: 100%;
-	}
+.lead {
+	font-size: 18px;
 }
 
-/* Small Devices */
-@media only screen and (max-width: 600px) {
-	header .container {
-		width: 100%;
-	}
-
-	.container {
-		display: inherit;
-	}
+.bg-light-gray {
+	background-color: #E4E5E5;
 }
 
-/* Extra Small Devices */
-@media only screen and (max-width: 600px) {
-	header .container {
-		width: 100%;
-	}
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
 
-	.container {
-		display: inherit;
-	}
+  ._2 {
+	  flex: 2;
+  }
+
+  .container {
+	  width: 100%;
+  }
+
+  .row {
+	  padding: 0 15px;
+  }
 }
