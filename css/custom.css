@@ -213,10 +213,10 @@ hr {
   .row {
 	  padding: 0 15px;
   }
+}
 
-  @media only screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) {
   	.row {
   		flex-direction: row;
   	}
   }
-}
