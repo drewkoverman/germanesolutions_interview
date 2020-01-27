@@ -12,9 +12,18 @@ header {
 	padding: 0.8em 0;
 }
 
-header img {
+header img.logo {
 	width: 150px;
 	padding: 0 10px;
+}
+
+header h1 {
+	font-size: 16px;
+	font-weight: 600;
+	float: right;
+	text-transform: uppercase;
+	margin: 14px 20px 0 0;
+	color: #184f64;
 }
 
 .container {
@@ -24,7 +33,7 @@ header img {
 
 .row {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
@@ -35,7 +44,7 @@ header img {
 }
 
 .banner {
-	height: 150px;
+	height: auto;
 	background: linear-gradient(45deg,rgba(20,78,100,.6),rgba(62,69,169,.4),transparent);
 	display: flex;
 	justify-content: center;
@@ -45,23 +54,13 @@ header img {
 
 .banner h2 {
 	font-size: 35px;
-	font-weight: 800;
-	text-transform: uppercase;
-	position: relative;
+	font-weight: 400;
 	text-align: center;
-	text-shadow: 2px 2px 1px rgba(64,64,65,.9);
+	text-shadow: 4px 2px 3px rgba(64,64,65,.9);
 }
 
-.banner h2:after {
-	position: absolute;
-	top: 1.5em;
-    left: 43%;
-    width: 4em;
-    height: 5px;
-    margin-bottom: 18px;
-	content: '';
-	background-color: #ffffff;
-	box-shadow: 0px 2px 2px rgba(64,64,65,.9);
+.banner h2 span {
+	display: block;
 }
 
 .message {
@@ -90,9 +89,9 @@ header img {
 	top: 100%;
 	left: 2%;
 	width: 4em;
-	height: 3px;
+	height: 2px;
 	content: '';
-	background-color: #E4E5E5;
+	background-color: #404041;
 }
 
 .content h3.title span {
@@ -112,8 +111,31 @@ header img {
 
 .content img.img-responsive {
 	display: block;
-	max-width: 100%;
+	max-width: 315px;
 	height: auto;
+}
+
+footer {
+	background-color: #404041;
+	color: #cccccc;
+	display: flex;
+	font-size: 10px;
+	margin-top: 50px;
+}
+
+footer ul {
+	list-style: none;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding-left: 0;
+}
+
+footer ul li {
+	display: inline;
+}
+
+footer ul li.legal {
+	float:right;
 }
 
 .physicians {
@@ -121,15 +143,57 @@ header img {
 	border-bottom: 1px solid #eeeeee;
 }
 
+.admin {
+	background-color: #E4E5E5;
+	padding: 50px 0;
+}
+
+.annotations {
+	padding: 50px 0;
+}
+
+.contact h4 {
+	text-align: center;
+	font-weight: 300;
+	font-size: 25px;
+}
+
+.contact .btn {
+	border-radius: 0;
+	padding: 10px 0;
+	color: #ffffff;
+	text-transform: uppercase;
+	background: #4456a2;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 15px;
+	letter-spacing: 0px;
+	word-spacing: 2px;
+	vertical-align: middle;
+}
+
+.contact .btn:hover {
+	color: #404041;
+	background-color: #E4E5E5;
+}
+
+.admin .column {
+	padding: 0 15px;
+}
+
 .lead {
 	font-size: 18px;
 }
 
-.bg-light-gray {
-	background-color: #E4E5E5;
+hr {
+	color: #fefefe;
+    margin: 50px auto 60px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px){
   .column {
     flex: 1;
   }
@@ -142,7 +206,17 @@ header img {
 	  width: 100%;
   }
 
+  .content img.img-responsive {
+  	max-width: 100%;
+  }
+
   .row {
 	  padding: 0 15px;
+  }
+
+  @media only screen and (min-width: 576px) {
+  	.row {
+  		flex-direction: row;
+  	}
   }
 }
