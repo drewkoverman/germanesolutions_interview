@@ -10,24 +10,26 @@ body {
 header {
 	box-shadow: 0px 2px 2px rgba(0,0,0, 0.18);
 	padding: 0.8em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 header img.logo {
-	width: 150px;
+	width: auto;
 	padding: 0 10px;
 }
 
 header h1 {
 	font-size: 16px;
 	font-weight: 600;
-	float: right;
+	float: none;
 	text-transform: uppercase;
-	margin: 14px 20px 0 0;
+	margin: 14px 0 0 0;
 	color: #184f64;
 }
 
 .container {
-	max-width: 1170px;
 	margin: 0 auto;
 }
 
@@ -50,17 +52,16 @@ header h1 {
 	justify-content: center;
 	align-items: center;
 	color: #ffffff;
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
 }
 
 .banner h2 {
-	font-size: 35px;
+	font-size: 25px;
 	font-weight: 400;
 	text-align: center;
 	text-shadow: 4px 2px 3px rgba(64,64,65,.9);
-}
-
-.banner h2 span {
-	display: block;
+	padding: 0 30px;
 }
 
 .message {
@@ -73,12 +74,13 @@ header h1 {
 
 .message span {
 	color: #3E45A9;
+	display: block;
 }
 
 .content h3.title {
 	text-transform: uppercase;
 	font-weight: 800;
-	font-size: 45px;
+	font-size: 40px;
 	position: relative;
 	padding-left: 10px;
 	margin-bottom: 20px;
@@ -127,7 +129,7 @@ footer ul {
 	list-style: none;
 	font-weight: 600;
 	text-transform: uppercase;
-	padding-left: 0;
+	padding: 0 15px;
 }
 
 footer ul li {
@@ -135,12 +137,14 @@ footer ul li {
 }
 
 footer ul li.legal {
-	float:right;
+	float: none;
+	display: block;
+	line-height: 20px
 }
 
 .physicians {
 	padding-top: 2em;
-	border-bottom: 1px solid #eeeeee;
+	border-bottom: 1px solid #E4E5E5;
 }
 
 .admin {
@@ -149,7 +153,7 @@ footer ul li.legal {
 }
 
 .annotations {
-	padding: 50px 0;
+	padding: 0;
 }
 
 .contact h4 {
@@ -164,7 +168,7 @@ footer ul li.legal {
 	color: #ffffff;
 	text-transform: uppercase;
 	background: #4456a2;
-	display: inline-block;
+	display: block;
 	font-size: 12px;
 	font-weight: 600;
 	text-decoration: none;
@@ -172,7 +176,7 @@ footer ul li.legal {
 	padding: 10px 15px;
 	letter-spacing: 0px;
 	word-spacing: 2px;
-	vertical-align: middle;
+	margin: 1em 8em;
 }
 
 .contact .btn:hover {
@@ -193,6 +197,46 @@ hr {
     margin: 50px auto 60px;
 }
 
+.animation {
+	animation-duration: 0.8s;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeFromTop {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@-webkit-keyframes fadeFromTop {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeFromTop {
+	animation-name: fadeFromTop;
+	-webkit-animation-name: fadeFromTop;
+}
+
 @media screen and (min-width: 768px){
   .column {
     flex: 1;
@@ -200,6 +244,19 @@ hr {
 
   ._2 {
 	  flex: 2;
+  }
+
+  header {
+	  display: block;
+  }
+
+  header img.logo {
+	  width: 150px;
+  }
+
+  header h1 {
+	  float: right;
+	  margin: 14px 20px 0 0;
   }
 
   .container {
@@ -212,11 +269,32 @@ hr {
 
   .row {
 	  padding: 0 15px;
+	  flex-direction: row;
+  }
+
+  .banner {
+	  padding: 0;
+  }
+
+  .banner h2 {
+	font-size: 35px;
+  }
+  
+  footer ul li.legal {
+	float: right;
+  }
+
+  .content h3.title {
+	  font-size: 45px;
+  }
+
+  .annotations {
+	padding: 50px 0;
+  }
+
+  .contact .btn {
+	  display: inline-block;
+	  margin: 0;
+	  vertical-align: middle;
   }
 }
-
-@media only screen and (min-width: 576px) {
-  	.row {
-  		flex-direction: row;
-  	}
-  }

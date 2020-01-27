@@ -1,0 +1,350 @@
+/*
+    Project Title: Exercise Framework
+    Owner: Drew Koverman
+    Version: 1.0
+*/
+
+/* Utility Variables */
+
+$lcd: 0;
+$secondsVar: 1s;
+$millisecondsVar: 0.8s;
+$opacity: 1;
+
+/* Branding & Colors Variables */
+$typeface: Raleway;
+$typography-sizing: 14px;
+$bg-black: #404041;
+$bg-white: #fff;
+$bg-blue: #184f64;
+$bg-blue-alt: #4456a2;
+$bg-blue-gradient-left: rgba(20,78,100,.6);
+$bg-blue-gradient-right: rgba(62,69,169,.4);
+$banner-bg: rgba(64,64,65,.9);
+$bg-light-gray: #E4E5E5;
+$gray: #ccc;
+$border: #FEFEFE;
+
+/* Column Flexbox Variables */
+$col-6: 1;
+$col-8: 2;
+
+/* Logo Variable */
+$logo: 150px;
+
+/* Framework Styles */
+body {
+    font-family: $typeface;
+	margin: $lcd;
+	font-size: $typography-sizing;
+    line-height: 1.428571429;
+    color: $bg-black;
+    background-color: $bg-white;
+}
+
+header {
+	box-shadow: $lcd 2px 2px rgba($lcd,$lcd,$lcd, 0.18);
+	padding: 0.8em $lcd;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    
+    img.logo {
+        width: $logo;
+        padding: $lcd 10px;
+    }
+
+    h1 {
+        font-size: 16px;
+        font-weight: 600;
+        float: none;
+        text-transform: uppercase;
+        margin: 14px $lcd $lcd $lcd;
+        color: $bg-blue;
+    }
+}
+
+.container {
+    margin: $lcd auto;
+}
+
+.row {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.column {
+	flex-basis: 100%;
+}
+
+.banner {
+	height: auto;
+	background: linear-gradient(45deg,$bg-blue-gradient-left,$bg-blue-gradient-right,transparent);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $bg-white;
+	animation-delay: $secondsVar;
+    -webkit-animation-delay: $secondsVar;
+    
+    h2 {
+        font-size: 25px;
+        font-weight: 400;
+        text-align: center;
+        text-shadow: 4px 2px 3px $banner-bg;
+        padding: $lcd 30px;
+    }
+}
+
+.message {
+	background-color: $bg-light-gray;
+	display: flex;
+	color: $bg-black;
+	font-weight: 800;
+    text-align: center;
+    
+    span {
+        color: $bg-blue-alt;
+        display: block;
+    }
+}
+
+.content {
+    h3.title {
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 40px;
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 20px;
+
+        &:after {
+            position: absolute;
+            top: 100%;
+            left: 2%;
+            width: 4em;
+            height: 2px;
+            content: '';
+            background-color: $bg-black;
+        }
+
+        span {
+            display: block;
+            font-size: $typography-sizing;
+            font-weight: 400;
+            line-height: $lcd;
+            margin-left: 2px;
+        }
+    }
+
+    ul.items {
+        margin: $lcd;
+        font-size: 18px;
+        line-height: 2.5; 
+        padding-left: 30px;
+    }
+
+    img.img-responsive {
+        display: block;
+        max-width: 315px;
+        height: auto;
+    }
+}
+
+footer {
+    background-color: $bg-black;
+	color: $gray;
+	display: flex;
+	font-size: 10px;
+    margin-top: 50px;
+    
+    ul {
+        list-style: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: $lcd 15px;
+
+        li {
+            display: inline;
+            &.legal {
+                float: none;
+                display: block;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.physicians {
+	padding-top: 2em;
+	border-bottom: 1px solid $bg-light-gray;
+}
+
+.admin {
+	background-color: $bg-light-gray;
+    padding: 50px $lcd;
+    
+    .column {
+        padding: 0 15px;
+    }
+}
+
+.annotations {
+	padding: $lcd;
+}
+
+.contact {
+    h4 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 25px;
+    }
+
+    .btn {
+        border-radius: $lcd;
+        padding: 10px $lcd;
+        color: $bg-white;
+        text-transform: uppercase;
+        background: $bg-blue-alt;
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 15px;
+        letter-spacing: $lcd;
+        word-spacing: 2px;
+        margin: 1em 8em;
+
+        &:hover {
+            color: $bg-black;
+            background-color: $bg-light-gray;
+        }
+    }
+}
+
+.lead {
+    font-size: 18px;
+}
+
+hr {
+    color: $border;
+    margin: 50px auto 60px;
+}
+
+.animation {
+	animation-duration: $millisecondsVar;
+	animation-fill-mode: both;
+	-webkit-animation-duration: $millisecondsVar;
+	-webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeFromTop {
+	from {
+		opacity: $lcd;
+		-webkit-transform: translate3d($lcd, -100%, $lcd);
+		transform: translate3d($lcd, -100%, $lcd);
+	}
+	to {
+		opacity: $opacity;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@-webkit-keyframes fadeFromTop {
+	from {
+		opacity: $lcd;
+		-webkit-transform: translate3d($lcd, -100%, $lcd);
+		transform: translate3d($lcd, -100%, $lcd);
+	}
+	to {
+		opacity: $opacity;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeFromTop {
+	animation-name: fadeFromTop;
+	-webkit-animation-name: fadeFromTop;
+}
+
+@media screen and (min-width: 768px) {
+    .column {
+        flex: $col-6;
+    }
+
+    ._2 {
+        flex: $col-8;
+    }
+  
+    header {
+        display: block;
+
+        &.logo {
+            width: 100%;
+        }
+
+        h1 {
+            float: right;
+            margin: 14px 20px $lcd $lcd;
+        }
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .content {
+        img {
+            &.img-responsive {
+                max-width: 100%;
+            }
+        }
+
+        h3 {
+            &.title {
+                font-size: 45px;
+            }
+        }
+    }
+
+    .row {
+        padding: $lcd 15px;
+        flex-direction: row; 
+    }
+
+    .banner {
+        padding: $lcd;
+
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    .annotations {
+        padding: 50px $lcd;
+    }
+
+    .contact {
+        .btn {
+            display: inline-block;
+            margin: $lcd;
+            vertical-align: middle;
+        }
+    }
+
+    footer {
+        ul {
+            li {
+                &.legal {
+                    float: right;
+                }
+            }
+        }
+    }
+}
