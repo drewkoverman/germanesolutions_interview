@@ -9,6 +9,7 @@
 $lcd: 0;
 $secondsVar: 1s;
 $millisecondsVar: 0.8s;
+$millisecondsVarAlt: 0.5s;
 $opacity: 1;
 
 /* Branding & Colors Variables */
@@ -52,6 +53,8 @@ header {
     img.logo {
         width: $logo;
         padding: $lcd 10px;
+        animation-delay: $millisecondsVarAlt;
+        -webkit-animation-delay: $millisecondsVarAlt;
     }
 
     h1 {
@@ -61,6 +64,8 @@ header {
         text-transform: uppercase;
         margin: 14px $lcd $lcd $lcd;
         color: $bg-blue;
+        animation-delay: $millisecondsVarAlt;
+        -webkit-animation-delay: $millisecondsVarAlt;
     }
 }
 
@@ -87,8 +92,8 @@ header {
 	justify-content: center;
 	align-items: center;
 	color: $bg-white;
-	animation-delay: $secondsVar;
-    -webkit-animation-delay: $secondsVar;
+	animation-delay: $millisecondsVar;
+    -webkit-animation-delay: $millisecondsVar;
     
     h2 {
         font-size: 25px;
@@ -268,9 +273,40 @@ hr {
 	}
 }
 
+@keyframes fadeFromLeft {
+    from {
+        opacity: $lcd;
+        -webkit-transform: translate3d(-100%, $lcd, $lcd);
+        transform: translate3d(-100%, $lcd, $lcd);
+    }
+    to {
+        opacity: $opacity;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeFromLeft {
+    from {
+        opacity: $lcd;
+        -webkit-transform: translate3d(-100%, $lcd, $lcd);
+        transform: translate3d(-100%, $lcd, $lcd);
+    }
+    to {
+        opacity: $opacity;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
 .fadeFromTop {
 	animation-name: fadeFromTop;
 	-webkit-animation-name: fadeFromTop;
+}
+
+.fadeFromLeft {
+    animation-name: fadeFromLeft;
+    -webkit-animation-name: fadeFromLeft;
 }
 
 @media screen and (min-width: 768px) {

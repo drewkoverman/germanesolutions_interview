@@ -18,6 +18,8 @@ header {
 header img.logo {
 	width: auto;
 	padding: 0 10px;
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
 
 header h1 {
@@ -27,6 +29,8 @@ header h1 {
 	text-transform: uppercase;
 	margin: 14px 0 0 0;
 	color: #184f64;
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
 
 .container {
@@ -52,8 +56,8 @@ header h1 {
 	justify-content: center;
 	align-items: center;
 	color: #ffffff;
-	animation-delay: 1s;
-	-webkit-animation-delay: 1s;
+	animation-delay: 0.8s;
+	-webkit-animation-delay: 0.8s;
 }
 
 .banner h2 {
@@ -232,9 +236,42 @@ hr {
 	}
 }
 
+@keyframes fadeFromLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@-webkit-keyframes fadeFromLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
 .fadeFromTop {
 	animation-name: fadeFromTop;
 	-webkit-animation-name: fadeFromTop;
+}
+
+.fadeFromLeft {
+	animation-name: fadeFromLeft;
+	-webkit-animation-name: fadeFromLeft;
 }
 
 @media screen and (min-width: 768px){
